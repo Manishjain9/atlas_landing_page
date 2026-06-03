@@ -9,27 +9,24 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: 'Email is required' }, { status: 400 });
   }
 
-  const user = userQ.byEmail.get(email.trim());
+  const user = await userQ.byEmail.get(email.trim());
 
   // Always return success to prevent email enumeration
   if (!user) {
     return NextResponse.json({ ok: true });
   }
 
-  // Purge old expired tokens
-  tokenQ.purgeExpired.run();
+  await tokenQ.purgeExpired.run();
 
   const token = generateToken();
-  tokenQ.create.run({ user_id: user.id, token, expires_at: expiresAt(60) }); // 1 hour
+  await tokenQ.create.run({ user_id: user.id, token, expires_at: expiresAt(60) });
 
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? `http://localhost:3000`;
   const resetUrl = `${baseUrl}/reset-password?token=${token}`;
 
-  // ── In production: send email here via your email service ──────────────────
-  // Example (nodemailer, SendGrid, Resend, etc.):
-  //   await sendResetEmail({ to: user.email, name: user.first_name, url: resetUrl });
+  // In production: send email here via your email service
+  // Example: await sendResetEmail({ to: user.email, name: user.first_name, url: resetUrl });
 
-  // ── Dev: expose token in response body so you can test without email ────────
   const isDev = process.env.NODE_ENV !== 'production';
   return NextResponse.json({ ok: true, ...(isDev ? { _devResetUrl: resetUrl } : {}) });
 }

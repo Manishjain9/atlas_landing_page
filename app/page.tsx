@@ -13,7 +13,7 @@ export default async function Page() {
 
   return (
     <>
-      <Nav user={session} />
+      <Nav user={session ?? null} />
       <main id="home">
         <Hero />
         <StatsBar />

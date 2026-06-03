@@ -11,7 +11,6 @@ export async function POST(req: NextRequest) {
   const { firstName, lastName, email, phone, organization, password, confirmPassword } =
     await req.json().catch(() => ({}));
 
-  // ── Validation ──────────────────────────────────────────────────────────────
   if (!firstName?.trim())  return err('First name is required');
   if (!lastName?.trim())   return err('Last name is required');
   if (!email?.trim())      return err('Email is required');
@@ -20,13 +19,11 @@ export async function POST(req: NextRequest) {
   if (password.length < 8) return err('Password must be at least 8 characters');
   if (password !== confirmPassword) return err('Passwords do not match');
 
-  // ── Duplicate check ──────────────────────────────────────────────────────────
-  const existing = userQ.byEmail.get(email.trim());
+  const existing = await userQ.byEmail.get(email.trim());
   if (existing) return err('An account with this email already exists', 409);
 
-  // ── Create user ──────────────────────────────────────────────────────────────
   const password_hash = await hashPassword(password);
-  const result = userQ.create.run({
+  const result = await userQ.create.run({
     first_name: firstName.trim(),
     last_name: lastName.trim(),
     email: email.trim().toLowerCase(),
@@ -37,7 +34,6 @@ export async function POST(req: NextRequest) {
 
   const userId = result.lastInsertRowid as number;
 
-  // ── Auto-login: issue JWT ────────────────────────────────────────────────────
   const token = await signToken({
     userId,
     email: email.trim().toLowerCase(),

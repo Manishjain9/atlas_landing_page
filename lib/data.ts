@@ -181,16 +181,16 @@ export const CATEGORIES: Category[] = [
     label: 'Data Health',
     color: '#15803D',
     screens: [
-      {
-        idx: 14,
-        name: 'Pre-Mailing Address Hygiene',
-        desc: 'NCOA + CASS + deceased suppression + email validation as a six-step pre-mailing checklist.',
-        tag: 'Data Health',
-        color: '#15803D',
-        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
-        status: 'ready',
-        // videoId: '' — no video provided yet
-      },
+      // {
+      //   idx: 14,
+      //   name: 'Pre-Mailing Address Hygiene',
+      //   desc: 'NCOA + CASS + deceased suppression + email validation as a six-step pre-mailing checklist.',
+      //   tag: 'Data Health',
+      //   color: '#15803D',
+      //   colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+      //   status: 'ready',
+      //   // videoId: '' — no video provided yet
+      // },
       {
         idx: 15,
         name: 'Deceased Donor Management',
@@ -211,16 +211,16 @@ export const CATEGORIES: Category[] = [
         status: 'ready',
         videoId: '1guRsaGCPPdDPt0Fz_JASWJ97TjkFq6Yg',
       },
-      {
-        idx: 17,
-        name: 'Record Change Governance',
-        desc: 'Three-tier review model — parishes propose, diocese approves. Immutable audit log on every record change.',
-        tag: 'Data Health',
-        color: '#15803D',
-        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
-        status: 'ready',
-        // videoId: '' — no video provided yet
-      },
+      // {
+      //   idx: 17,
+      //   name: 'Record Change Governance',
+      //   desc: 'Three-tier review model — parishes propose, diocese approves. Immutable audit log on every record change.',
+      //   tag: 'Data Health',
+      //   color: '#15803D',
+      //   colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+      //   status: 'ready',
+      //   // videoId: '' — no video provided yet
+      // },
     ],
   },
   {

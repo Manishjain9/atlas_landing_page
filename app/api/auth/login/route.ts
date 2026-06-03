@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: 'Email and password are required' }, { status: 400 });
   }
 
-  const user = userQ.byEmail.get(email.trim());
+  const user = await userQ.byEmail.get(email.trim());
   if (!user) {
     return NextResponse.json({ ok: false, error: 'Invalid email or password' }, { status: 401 });
   }
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: false, error: 'Invalid email or password' }, { status: 401 });
   }
 
-  userQ.touchLogin.run(user.id);
+  await userQ.touchLogin.run(user.id);
 
   const token = await signToken(
     { userId: user.id, email: user.email, firstName: user.first_name, lastName: user.last_name },
