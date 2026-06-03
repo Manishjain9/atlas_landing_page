@@ -1,0 +1,309 @@
+import { Category, RoadmapItem } from '@/types';
+
+// ─── Google Drive helpers ─────────────────────────────────────────────────────
+export function driveThumb(id: string, size = 'w640-h400') {
+  return `https://drive.google.com/thumbnail?id=${id}&sz=${size}`;
+}
+export function driveEmbed(id: string) {
+  return `https://drive.google.com/file/d/${id}/preview`;
+}
+
+// ─── Screen → Video mapping ───────────────────────────────────────────────────
+// To add/remove a video: set or delete the videoId on any screen below.
+// To disable a video without removing it, comment out the videoId line.
+export const CATEGORIES: Category[] = [
+  {
+    label: 'Core CRM',
+    color: '#2563EB',
+    screens: [
+      {
+        idx: 0,
+        name: 'Diocese Dashboard',
+        desc: 'Top-level diocese KPIs, campaign progress, recent activity, and quick actions for development staff.',
+        tag: 'Core CRM',
+        color: '#2563EB',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1FNCOIBrbD4y2rsw76B6bBQRUf6oKo33L',
+      },
+      {
+        idx: 1,
+        name: 'Donors List',
+        desc: '84,312 records with search, filter by parish and donor type, and inline status indicators.',
+        tag: 'Core CRM',
+        color: '#2563EB',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1QFCMnm45dvvOHJMb_YD3iLM7bDXivxWG',
+      },
+      {
+        idx: 2,
+        name: 'Donor 360 Profile',
+        desc: 'Complete donor view — giving history, pipeline stage, wealth screening, household context, and Guru AI insights.',
+        tag: 'Core CRM',
+        color: '#2563EB',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '132orx_aYWz1WA9Sw6mBuJGnfvuIKwpT3',
+      },
+      {
+        // Advanced Batch Entry — video attached
+        idx: 3,
+        name: 'Advanced Batch Entry',
+        desc: 'Keyboard-driven batch entry for high-volume Sunday collection, with real-time accuracy scoring and GL coding.',
+        tag: 'Core CRM',
+        color: '#2563EB',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '15Rd5PHF_b9FBVCuZVx_IcBw0GaoQKv0f',
+      },
+    ],
+  },
+  {
+    label: 'Major Gifts',
+    color: '#7C3AED',
+    screens: [
+      {
+        idx: 4,
+        name: 'Major Gift Officer Dashboard',
+        desc: "Today's action list, pipeline by stage, recent wins, and portfolio KPIs for gift officers.",
+        tag: 'Major Gifts',
+        color: '#7C3AED',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '19l8WHv8-YZHpGU39-PvZGF4WPAXA8DWh',
+      },
+      {
+        idx: 5,
+        name: 'Moves Management Pipeline',
+        desc: 'Kanban-style pipeline across Identification, Qualification, Cultivation, Solicitation, and Stewardship.',
+        tag: 'Major Gifts',
+        color: '#7C3AED',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1V7ilDWbHSQPLzqjmLZQ1hn4Wy-wZCW_h',
+      },
+      {
+        idx: 6,
+        name: 'Solicitor Performance',
+        desc: 'Gift officer goal attainment, contacts logged, pipeline value, visits, and proposals — side by side.',
+        tag: 'Major Gifts',
+        color: '#7C3AED',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1aVmBth8NYd8GCr0FZX4LuwsGmdmJGgB2',
+      },
+      {
+        idx: 7,
+        name: 'Wealth Screening',
+        desc: 'iWave integration, capacity ratings, wealth indicators, and portfolio assignment for major gift prospecting.',
+        tag: 'Major Gifts',
+        color: '#7C3AED',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1i-F-SoMuolduDHKz7bA638zHyZszcmMh',
+      },
+      {
+        idx: 8,
+        name: 'Meeting Brief Generator',
+        desc: 'AI-generated pre-visit brief: giving history, interests, last contact, suggested ask, and talking points.',
+        tag: 'Major Gifts',
+        color: '#7C3AED',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1UAhMOq77ucuxyeg5uAZ_k0i19kduUXcz',
+      },
+    ],
+  },
+  {
+    label: 'Campaigns',
+    color: '#D97706',
+    screens: [
+      {
+        idx: 9,
+        name: 'Parish Campaign Portal',
+        desc: 'Committed vs. cash received, gift type analysis, pledge fulfillment, past due, write-offs, and cash flow — scoped to parish.',
+        tag: 'Campaigns',
+        color: '#D97706',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1vty0TVPxyB3ELEAQc9HfN6l--EyZtop1',
+      },
+      {
+        idx: 10,
+        name: 'Pledge Report',
+        desc: 'Full pledge summary with installment tracking, balance, fulfillment rates, and overdue flags.',
+        tag: 'Campaigns',
+        color: '#D97706',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1PCjpP5FMfJ9z5bDrTOdJePfGJwI8Z-gk',
+      },
+      {
+        idx: 11,
+        name: 'Events Dashboard',
+        desc: 'Event registration, attendance tracking, check-in management, and post-event giving attribution.',
+        tag: 'Campaigns',
+        color: '#D97706',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1U5NSGHVoFpTyf_Aal1gULdGQrRdSOPHR',
+      },
+    ],
+  },
+  {
+    label: 'Outreach',
+    color: '#0D9488',
+    screens: [
+      {
+        idx: 12,
+        name: 'Communications & Email',
+        desc: 'Email campaigns, open and click rates, automation workflows, unsubscribes, and CAN-SPAM compliance.',
+        tag: 'Outreach',
+        color: '#0D9488',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1iA6inSOhm9d4iT5WNkgsLK3mMYj-4E1f',
+      },
+      {
+        idx: 13,
+        name: 'Guru AI Query Interface',
+        desc: 'Natural language queries over your entire donor database — ask anything, get answers instantly.',
+        tag: 'Outreach',
+        color: '#0D9488',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1dEdYAF5ljSwxUqddjgVuDyttyD3ylLYN',
+      },
+    ],
+  },
+  {
+    label: 'Data Health',
+    color: '#15803D',
+    screens: [
+      {
+        idx: 14,
+        name: 'Pre-Mailing Address Hygiene',
+        desc: 'NCOA + CASS + deceased suppression + email validation as a six-step pre-mailing checklist.',
+        tag: 'Data Health',
+        color: '#15803D',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        // videoId: '' — no video provided yet
+      },
+      {
+        idx: 15,
+        name: 'Deceased Donor Management',
+        desc: 'LexisNexis/SSDI batch matching, Legacy.com monitoring, staff confirmation workflow, and automated suppression.',
+        tag: 'Data Health',
+        color: '#15803D',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '10BBphxRgYFwKa_Pc197cZGO5Y383jRYq',
+      },
+      {
+        idx: 16,
+        name: 'Duplicate Management',
+        desc: 'Confidence-scored duplicate detection, before/after diff, Tier 1 merge approval, and audit trail.',
+        tag: 'Data Health',
+        color: '#15803D',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1guRsaGCPPdDPt0Fz_JASWJ97TjkFq6Yg',
+      },
+      {
+        idx: 17,
+        name: 'Record Change Governance',
+        desc: 'Three-tier review model — parishes propose, diocese approves. Immutable audit log on every record change.',
+        tag: 'Data Health',
+        color: '#15803D',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        // videoId: '' — no video provided yet
+      },
+    ],
+  },
+  {
+    label: 'Reports & Integrations',
+    color: '#DC2626',
+    screens: [
+      {
+        idx: 18,
+        name: 'Reports Overview',
+        desc: '61-report library with scheduled delivery, recently run reports, and custom report builder.',
+        tag: 'Reports & Integrations',
+        color: '#DC2626',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1jQFKtA3kmQwAHfbCEgURzdOCRVefFMOR',
+      },
+      {
+        idx: 19,
+        name: 'GiveCentral Sync',
+        desc: 'Live sync status, real-time event log, reconciliation queue, and one-to-one GC account mapping.',
+        tag: 'Reports & Integrations',
+        color: '#DC2626',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1g7KrXyg7bfukCNRfB6SMChFUMm2eqaex',
+      },
+      {
+        idx: 20,
+        name: 'Integrations Hub',
+        desc: 'All connected services — iWave, SmartyStreets, Melissa Data, ZeroBounce, DocuSign, and more.',
+        tag: 'Reports & Integrations',
+        color: '#DC2626',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1MUIvNF4TB6dS_ENUCoT-aFW0BuZSYk8i',
+      },
+      {
+        idx: 21,
+        name: 'Donor Login Portal',
+        desc: 'Donor-facing portal — giving history, pledge status, tax receipts, and payment method management.',
+        tag: 'Reports & Integrations',
+        color: '#DC2626',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1GO8HgMk1GnBNgGeJC9hpsIfvYBovd2Iv',
+      },
+    ],
+  },
+];
+
+export const ALL_SCREENS = CATEGORIES.flatMap((c) => c.screens);
+
+export const ROADMAP_ITEMS: RoadmapItem[] = [
+  {
+    num: '01',
+    phase: 'Phase 1 · 2026 Q1–Q2',
+    title: 'Core CRM Foundation',
+    desc: 'Diocese dashboard, donor records, parish hierarchy, giving history, batch entry, and GiveCentral real-time sync. The complete data layer your team needs from day one.',
+    tags: ['Diocese Dashboard', 'Donor Profiles', 'Batch Entry', 'GiveCentral Sync', 'Parish Access Controls'],
+    active: true,
+  },
+  {
+    num: '02',
+    phase: 'Phase 2 · 2026 Q3',
+    title: 'Major Gifts & Pipeline',
+    desc: 'Moves management, gift officer dashboards, iWave wealth screening, meeting brief generator, and solicitor performance reporting.',
+    tags: ['Moves Management', 'Wealth Screening', 'Brief Generator', 'Solicitor Reports'],
+    active: true,
+  },
+  {
+    num: '03',
+    phase: 'Phase 3 · 2026 Q4',
+    title: 'Campaigns, Outreach & Guru AI',
+    desc: 'CMA campaign tracking, pledge management, email automation, and the Guru natural-language query engine that lets your team ask anything about your donor base.',
+    tags: ['CMA Tracking', 'Pledge Mgmt', 'Email Automation', 'Guru AI'],
+    active: false,
+  },
+  {
+    num: '04',
+    phase: 'Phase 4 · 2027',
+    title: 'Data Health & Governance',
+    desc: 'NCOA/CASS automation, deceased monitoring, duplicate merge workflows, three-tier record governance, and a full immutable audit log.',
+    tags: ['NCOA/CASS', 'Deceased Monitoring', 'Duplicate Merge', 'Audit Log'],
+    active: false,
+  },
+];
