@@ -1,20 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCloudflareContext } from '@opennextjs/cloudflare';
 import { BrevoClient } from '@getbrevo/brevo';
-import fs from 'fs';
-import path from 'path';
 
-const SUBMISSIONS_FILE = path.join(process.cwd(), 'data', 'submissions.json');
-
-function appendToFile(entry: object) {
+async function appendToFile(entry: object) {
   try {
-    const dir = path.dirname(SUBMISSIONS_FILE);
+    const fs   = await import('fs');
+    const path = await import('path');
+    const file = path.join(process.cwd(), 'data', 'submissions.json');
+    const dir  = path.dirname(file);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-    const existing = fs.existsSync(SUBMISSIONS_FILE)
-      ? JSON.parse(fs.readFileSync(SUBMISSIONS_FILE, 'utf-8'))
+    const existing = fs.existsSync(file)
+      ? JSON.parse(fs.readFileSync(file, 'utf-8'))
       : [];
     existing.push(entry);
-    fs.writeFileSync(SUBMISSIONS_FILE, JSON.stringify(existing, null, 2), 'utf-8');
+    fs.writeFileSync(file, JSON.stringify(existing, null, 2), 'utf-8');
   } catch (e) {
     console.error('[submit] file write failed', e);
   }
