@@ -3,7 +3,7 @@ import { userQ, tokenQ } from '@/lib/db';
 import { generateToken, expiresAt } from '@/lib/auth-utils';
 
 export async function POST(req: NextRequest) {
-  const { email } = await req.json().catch(() => ({}));
+  const { email } = await (req.json() as Promise<Record<string, any>>).catch(() => ({} as Record<string, any>));
 
   if (!email?.trim()) {
     return NextResponse.json({ ok: false, error: 'Email is required' }, { status: 400 });

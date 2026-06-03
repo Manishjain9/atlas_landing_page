@@ -53,7 +53,7 @@ export default function RegisterPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form }),
       });
-      const data = await res.json();
+      const data = await res.json() as Record<string, any>;
       if (!data.ok) { setApiError(data.error); return; }
       router.push('/');
       router.refresh();

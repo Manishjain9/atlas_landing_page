@@ -29,7 +29,7 @@ function LoginForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, rememberMe: remember }),
       });
-      const data = await res.json();
+      const data = await res.json() as Record<string, any>;
       if (!data.ok) { setError(data.error); return; }
       router.push(from);
       router.refresh();

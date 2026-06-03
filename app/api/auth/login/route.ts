@@ -4,7 +4,7 @@ import { verifyPassword } from '@/lib/auth-utils';
 import { signToken, attachCookie } from '@/lib/session';
 
 export async function POST(req: NextRequest) {
-  const { email, password, rememberMe } = await req.json().catch(() => ({}));
+  const { email, password, rememberMe } = await (req.json() as Promise<Record<string, any>>).catch(() => ({} as Record<string, any>));
 
   if (!email?.trim() || !password) {
     return NextResponse.json({ ok: false, error: 'Email and password are required' }, { status: 400 });

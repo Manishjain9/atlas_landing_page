@@ -9,7 +9,7 @@ function err(msg: string, status = 400) {
 
 export async function POST(req: NextRequest) {
   const { firstName, lastName, email, phone, organization, password, confirmPassword } =
-    await req.json().catch(() => ({}));
+    await (req.json() as Promise<Record<string, any>>).catch(() => ({} as Record<string, any>));
 
   if (!firstName?.trim())  return err('First name is required');
   if (!lastName?.trim())   return err('Last name is required');

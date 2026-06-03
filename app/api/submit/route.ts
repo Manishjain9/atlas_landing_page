@@ -28,7 +28,7 @@ const NOTIFY_TO = [
 
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
+    const body = await req.json() as Record<string, any>;
 
     let kv: KVNamespace | undefined;
     let brevoKey = process.env.BREVO_API_KEY ?? '';

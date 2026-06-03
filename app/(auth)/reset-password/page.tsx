@@ -37,7 +37,7 @@ function ResetForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token, password, confirmPassword: confirm }),
       });
-      const data = await res.json();
+      const data = await res.json() as Record<string, any>;
       if (!data.ok) { setError(data.error); return; }
       setSuccess(true);
       setTimeout(() => router.push('/login'), 2500);

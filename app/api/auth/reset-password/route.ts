@@ -3,7 +3,7 @@ import { tokenQ, userQ } from '@/lib/db';
 import { hashPassword } from '@/lib/auth-utils';
 
 export async function POST(req: NextRequest) {
-  const { token, password, confirmPassword } = await req.json().catch(() => ({}));
+  const { token, password, confirmPassword } = await (req.json() as Promise<Record<string, any>>).catch(() => ({} as Record<string, any>));
 
   if (!token)    return NextResponse.json({ ok: false, error: 'Reset token is required' }, { status: 400 });
   if (!password) return NextResponse.json({ ok: false, error: 'Password is required' }, { status: 400 });
