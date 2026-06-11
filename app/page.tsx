@@ -1,4 +1,3 @@
-import { getSession } from '@/lib/session';
 import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import StatsBar from '@/components/StatsBar';
@@ -9,11 +8,9 @@ import FounderSection from '@/components/FounderSection';
 import Footer from '@/components/Footer';
 
 export default async function Page() {
-  const session = await getSession();
-
   return (
     <>
-      <Nav user={session ?? null} />
+      <Nav />
       <main id="home">
         <Hero />
         <StatsBar />

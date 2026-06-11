@@ -176,10 +176,6 @@ export default function RegisterPage() {
           </button>
         </form>
 
-        <div className="auth-foot">
-          Already have an account?{' '}
-          <Link href="/login">Sign in</Link>
-        </div>
       </div>
     </div>
   );

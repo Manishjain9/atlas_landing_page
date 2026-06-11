@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 342.34 98.65">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: rgba(200, 160, 74, .4);
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        font-family: DMSerifDisplay-Regular, 'DM Serif Display';
+        font-size: 62px;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-4, .cls-7 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        stroke: rgba(200, 160, 74, .55);
+        stroke-width: 1.4px;
+      }
+
+      .cls-5 {
+        font-family: DMSans-Medium, 'DM Sans';
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .cls-8 {
+        fill: #c8a04a;
+      }
+
+      .cls-9 {
+        letter-spacing: .22em;
+      }
+
+      .cls-10 {
+        letter-spacing: .19em;
+      }
+
+      .cls-11 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-12 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        stroke: rgba(200, 160, 74, .45);
+        stroke-width: 1.2px;
+      }
+
+      .cls-13 {
+        fill: rgba(255, 255, 255, .65);
+      }
+    </style>
+  </defs>
+  <g id="atlas-mark">
+    <line class="cls-2" x1="9.54" y1="88.1" x2="45.54" y2="54.1"/>
+    <line class="cls-2" x1="45.54" y1="54.1" x2="85.54" y2="34.1"/>
+    <line class="cls-2" x1="85.54" y1="34.1" x2="125.54" y2="20.1"/>
+    <line class="cls-3" x1="85.54" y1="34.1" x2="97.54" y2="74.1"/>
+    <circle class="cls-6" cx="9.54" cy="88.1" r="4"/>
+    <circle class="cls-6" cx="45.54" cy="54.1" r="5"/>
+    <circle class="cls-6" cx="85.54" cy="34.1" r="5.5"/>
+    <circle class="cls-13" cx="97.54" cy="74.1" r="3.5"/>
+    <circle class="cls-1" cx="125.54" cy="20.1" r="10"/>
+    <circle class="cls-8" cx="125.54" cy="20.1" r="7"/>
+  </g>
+  <g>
+    <text class="cls-4" transform="translate(174.54 57.87)"><tspan class="cls-11" x="0" y="0">A</tspan><tspan x="38.69" y="0">t</tspan><tspan class="cls-12" x="78.18" y="0">l</tspan><tspan x="78.18" y="0">as</tspan></text>
+    <g class="cls-7">
+      <text class="cls-5" transform="translate(174.54 85.87)"><tspan class="cls-10" x="0" y="0">B</tspan><tspan class="cls-9" x="12.03" y="0">Y GIVECENTRAL</tspan></text>
+    </g>
+  </g>
+</svg>
