@@ -265,7 +265,7 @@ export const CATEGORIES: Category[] = [
         color: '#DC2626',
         colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
         status: 'ready',
-        videoId: '17hYAnKgEE-eDu3btzct9yuqRD8hfndxS',
+        videoId: '1tyMM47G3BFKOaDx_uGSnvJwrBiJNfYHs',
       },
       {
         idx: 20,
