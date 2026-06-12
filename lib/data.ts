@@ -297,6 +297,16 @@ export const CATEGORIES: Category[] = [
         status: 'ready',
         videoId: '1bHPwnmh6dliRt3L7YUi2tffDAsLve3Ct',
       },
+      {
+        idx: 23,
+        name: 'Location Portal',
+        desc: 'Multi-location management — branch performance metrics, inventory tracking, staff coordination, and local reporting across diocesan locations.',
+        tag: 'Reports & Integrations',
+        color: '#DC2626',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '17hYAnKgEE-eDu3btzct9yuqRD8hfndxS',
+      },
     ],
   },
 ];
