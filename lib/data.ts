@@ -137,7 +137,7 @@ export const CATEGORIES: Category[] = [
         color: '#D97706',
         colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
         status: 'ready',
-        videoId: '1PCjpP5FMfJ9z5bDrTOdJePfGJwI8Z-gk',
+        videoId: '1XtF6nNYDaz8bJtnQrqly6VqOU6JTPie8',
       },
       {
         idx: 11,
@@ -147,7 +147,7 @@ export const CATEGORIES: Category[] = [
         color: '#D97706',
         colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
         status: 'ready',
-        videoId: '1U5NSGHVoFpTyf_Aal1gULdGQrRdSOPHR',
+        videoId: '1oUPPmtKkD-noLy4r3PhdtGdl5bJymI3S',
       },
     ],
   },
@@ -199,7 +199,7 @@ export const CATEGORIES: Category[] = [
         color: '#15803D',
         colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
         status: 'ready',
-        videoId: '10BBphxRgYFwKa_Pc197cZGO5Y383jRYq',
+        videoId: '1ZBLgRS2RTzBgr8gKSUhoWTF5r7hhwdiP',
       },
       {
         idx: 15,
@@ -209,7 +209,7 @@ export const CATEGORIES: Category[] = [
         color: '#15803D',
         colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
         status: 'ready',
-        videoId: '1guRsaGCPPdDPt0Fz_JASWJ97TjkFq6Yg',
+        videoId: '1XvxX4o-Izdf3MttInxXy0AdCMuH0vks8',
       },
       // {
       //   idx: 17,
@@ -235,7 +235,7 @@ export const CATEGORIES: Category[] = [
         color: '#DC2626',
         colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
         status: 'ready',
-        videoId: '1jQFKtA3kmQwAHfbCEgURzdOCRVefFMOR',
+        videoId: '1NbTdmaeMxvv95Xti1KWUSIxcGp_A1G1b',
       },
       {
         idx: 17,
@@ -245,7 +245,7 @@ export const CATEGORIES: Category[] = [
         color: '#DC2626',
         colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
         status: 'ready',
-        videoId: '1g7KrXyg7bfukCNRfB6SMChFUMm2eqaex',
+        videoId: '1DIbNbfHq7UG3tCN6SyHygZLJNpuHgm7u',
       },
       {
         idx: 18,
