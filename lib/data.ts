@@ -175,6 +175,16 @@ export const CATEGORIES: Category[] = [
         status: 'ready',
         videoId: '1kR6ETUS--ZL53NrwSo3iEs7jXzZyANVM',
       },
+      {
+        idx: 14,
+        name: 'Smart Triggers',
+        desc: 'Automated workflow triggers — event-based actions, conditional logic, notification workflows, and integration event handlers for streamlined operations.',
+        tag: 'Outreach',
+        color: '#0D9488',
+        colorBg: 'linear-gradient(135deg,#0D1A2E 0%,#152848 100%)',
+        status: 'ready',
+        videoId: '1koQAPaahn2IuF-YL6EbhqUE-G5MpKr0W',
+      },
     ],
   },
   {
@@ -192,7 +202,7 @@ export const CATEGORIES: Category[] = [
       //   // videoId: '' — no video provided yet
       // },
       {
-        idx: 14,
+        idx: 15,
         name: 'Deceased Donor Management',
         desc: 'LexisNexis/SSDI batch matching, Legacy.com monitoring, staff confirmation workflow, and automated suppression.',
         tag: 'Data Health',
@@ -202,7 +212,7 @@ export const CATEGORIES: Category[] = [
         videoId: '1ZBLgRS2RTzBgr8gKSUhoWTF5r7hhwdiP',
       },
       {
-        idx: 15,
+        idx: 16,
         name: 'Duplicate Management',
         desc: 'Confidence-scored duplicate detection, before/after diff, Tier 1 merge approval, and audit trail.',
         tag: 'Data Health',
@@ -228,7 +238,7 @@ export const CATEGORIES: Category[] = [
     color: '#DC2626',
     screens: [
       {
-        idx: 16,
+        idx: 17,
         name: 'Reports Overview',
         desc: '61-report library with scheduled delivery, recently run reports, and custom report builder.',
         tag: 'Reports & Integrations',
@@ -238,7 +248,7 @@ export const CATEGORIES: Category[] = [
         videoId: '1NbTdmaeMxvv95Xti1KWUSIxcGp_A1G1b',
       },
       {
-        idx: 17,
+        idx: 18,
         name: 'GiveCentral Sync',
         desc: 'Live sync status, real-time event log, reconciliation queue, and one-to-one GC account mapping.',
         tag: 'Reports & Integrations',
@@ -248,7 +258,7 @@ export const CATEGORIES: Category[] = [
         videoId: '1DIbNbfHq7UG3tCN6SyHygZLJNpuHgm7u',
       },
       {
-        idx: 18,
+        idx: 19,
         name: 'Integrations Hub',
         desc: 'All connected services — iWave, SmartyStreets, Melissa Data, ZeroBounce, DocuSign, and more.',
         tag: 'Reports & Integrations',
@@ -258,7 +268,7 @@ export const CATEGORIES: Category[] = [
         videoId: '1k7EQG_ZTolXrl4BDTx16CNJzpFZfEyiZ',
       },
       {
-        idx: 19,
+        idx: 20,
         name: 'Donor Login Portal',
         desc: 'Donor-facing portal — giving history, pledge status, tax receipts, and payment method management.',
         tag: 'Reports & Integrations',
@@ -268,7 +278,7 @@ export const CATEGORIES: Category[] = [
         videoId: '1tyMM47G3BFKOaDx_uGSnvJwrBiJNfYHs',
       },
       {
-        idx: 20,
+        idx: 21,
         name: 'User & Roles',
         desc: 'Role-based access control, user management, permission hierarchies, and audit trails for administrative oversight.',
         tag: 'Reports & Integrations',
@@ -278,7 +288,7 @@ export const CATEGORIES: Category[] = [
         videoId: '1f1XmmGEtRxm7xT-eoH8NmGXhAtUv6eTU',
       },
       {
-        idx: 21,
+        idx: 22,
         name: 'Task & Reminders',
         desc: 'Task assignment, deadline tracking, automated reminders, and staff task list prioritization for workflow management.',
         tag: 'Reports & Integrations',
@@ -288,7 +298,7 @@ export const CATEGORIES: Category[] = [
         videoId: '1uCU4s8nryOIOAkXXNSJbTnIl3rsG8IU5',
       },
       {
-        idx: 22,
+        idx: 23,
         name: 'Tags',
         desc: 'Custom donor segmentation, tagging and filtering for targeted campaigns, gift tracking, and group management.',
         tag: 'Reports & Integrations',
@@ -298,7 +308,7 @@ export const CATEGORIES: Category[] = [
         videoId: '1bHPwnmh6dliRt3L7YUi2tffDAsLve3Ct',
       },
       {
-        idx: 23,
+        idx: 24,
         name: 'Location Portal',
         desc: 'Multi-location management — branch performance metrics, inventory tracking, staff coordination, and local reporting across diocesan locations.',
         tag: 'Reports & Integrations',
