@@ -21,7 +21,7 @@ async function appendToFile(entry: object) {
 
 const NOTIFY_TO = [
   { email: 'mj90155@gmail.com',               name: 'Manish' },
-  { email: 'info@givecentral.org',             name: 'GiveCentral' },
+  { email: 'vvass@givecentral.org',            name: 'GiveCentral' },
   { email: 'info@nuclaysolutions.com',         name: 'Nuclay' },
   { email: 'manishjain@nuclaysolutions.com',   name: 'Manish Jain' },
 ];
