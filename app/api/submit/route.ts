@@ -24,6 +24,7 @@ const NOTIFY_TO = [
   { email: 'vvass@givecentral.org',            name: 'GiveCentral' },
   { email: 'info@nuclaysolutions.com',         name: 'Nuclay' },
   { email: 'manishjain@nuclaysolutions.com',   name: 'Manish Jain' },
+  { email: 'umesh@nuclaysolutions.com',        name: 'Umesh' },
 ];
 
 export async function POST(req: NextRequest) {
