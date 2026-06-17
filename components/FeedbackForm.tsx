@@ -72,6 +72,20 @@ export default function FeedbackForm() {
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
     setLoading(true);
+
+    // Track form submission to analytics
+    fetch('https://gc-analytics.mj90155.workers.dev/event', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        type: 'form_submit',
+        page: typeof window !== 'undefined' ? window.location.pathname : '',
+        label: 'founding-partner-feedback',
+        value: '',
+      }),
+    }).catch(() => {});
+
     try {
       const res = await fetch('/api/submit', {
         method: 'POST',
