@@ -72,6 +72,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               var el = e.target.closest('[data-analytics-cta]');
               if (el) {
                 sendEvent('cta_click', el.getAttribute('data-analytics-cta') || el.innerText.trim().slice(0, 50));
+                // ── Also treat form submit button clicks as form_submit ──
+                if (el.type === 'submit') {
+                  var form = el.closest('form');
+                  if (form) {
+                    var formLabel = form.getAttribute('data-analytics-label') || form.getAttribute('id') || 'form';
+                    sendEvent('form_submit', formLabel);
+                  }
+                }
               }
             }, true);
 
