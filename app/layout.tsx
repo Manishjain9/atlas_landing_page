@@ -27,7 +27,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
-        <Script id="gc-analytics" strategy="afterInteractive">{`
+
+        {/* Pageview tracking */}
+        <Script id="gc-analytics-pageview" strategy="afterInteractive">{`
           (function() {
             var ref = document.referrer ? '&ref=' + encodeURIComponent(document.referrer) : '';
             fetch(
@@ -36,6 +38,50 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             ).catch(function() {});
           })();
         `}</Script>
+
+        {/* Event tracking — forms, CTA clicks, time on page */}
+        <Script id="gc-analytics-events" strategy="afterInteractive">{`
+          (function() {
+            var BASE = 'https://gc-analytics.mj90155.workers.dev/event';
+            var startTime = Date.now();
+
+            function sendEvent(type, label, value) {
+              fetch(BASE, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                keepalive: true,
+                body: JSON.stringify({
+                  type: type,
+                  page: location.pathname,
+                  label: label || '',
+                  value: value || ''
+                })
+              }).catch(function() {});
+            }
+
+            document.addEventListener('submit', function(e) {
+              var form = e.target;
+              var label = form.getAttribute('data-analytics-label')
+                        || form.getAttribute('id')
+                        || form.getAttribute('name')
+                        || 'form';
+              sendEvent('form_submit', label);
+            }, true);
+
+            document.addEventListener('click', function(e) {
+              var el = e.target.closest('[data-analytics-cta]');
+              if (el) {
+                sendEvent('cta_click', el.getAttribute('data-analytics-cta') || el.innerText.trim().slice(0, 50));
+              }
+            }, true);
+
+            window.addEventListener('beforeunload', function() {
+              var seconds = Math.round((Date.now() - startTime) / 1000);
+              if (seconds > 2) sendEvent('time_on_page', location.pathname, String(seconds));
+            });
+          })();
+        `}</Script>
+
       </body>
     </html>
   );

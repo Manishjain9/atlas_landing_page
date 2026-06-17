@@ -101,7 +101,13 @@ export default function FeedbackForm() {
   }
 
   return (
-    <form className="ff" onSubmit={onSubmit} noValidate aria-label="Founding partner feedback form">
+    <form
+  className="ff"
+  onSubmit={onSubmit}
+  noValidate
+  aria-label="Founding partner feedback form"
+  data-analytics-label="founding-partner-feedback"
+>
       <h3 className="ff-h">Tell us what you think</h3>
       <p className="ff-sub">Takes 2 minutes. No sales call required.</p>
 
