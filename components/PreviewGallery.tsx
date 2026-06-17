@@ -40,6 +40,7 @@ function ScreenCard({ screen, onOpen }: { screen: Screen; onOpen: (idx: number) 
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(screen.idx); }
       }}
+      data-analytics-cta={`PreviewGallery - ${screen.name}`}
     >
       {/* ── Preview area ── */}
       <div className="mc-prev" style={{ background: screen.colorBg, position: 'relative' }}>

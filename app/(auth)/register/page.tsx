@@ -86,7 +86,7 @@ export default function RegisterPage() {
 
         {apiError && <div className="auth-err" role="alert">{apiError}</div>}
 
-        <form onSubmit={submit} noValidate>
+        <form onSubmit={submit} noValidate data-analytics-label="register-form">
           {/* Name row */}
           <div className="ff-row">
             <div className="ff-field">
@@ -171,7 +171,7 @@ export default function RegisterPage() {
             {errors.confirmPassword && <span className="ff-err-msg" role="alert">{errors.confirmPassword}</span>}
           </div>
 
-          <button className="ff-submit" type="submit" disabled={loading} aria-busy={loading}>
+          <button className="ff-submit" type="submit" disabled={loading} aria-busy={loading} data-analytics-cta="RegisterForm - Submit">
             {loading ? 'Creating account…' : 'Create account →'}
           </button>
         </form>

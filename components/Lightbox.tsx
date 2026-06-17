@@ -71,6 +71,7 @@ export default function Lightbox({ activeIdx, onClose, onNavigate }: LightboxPro
           disabled={activeIdx === 0}
           aria-label="Previous screen"
           title="Previous (←)"
+          data-analytics-cta="Lightbox - Previous"
         >
           ←
         </button>
@@ -80,12 +81,13 @@ export default function Lightbox({ activeIdx, onClose, onNavigate }: LightboxPro
           disabled={activeIdx === ALL_SCREENS.length - 1}
           aria-label="Next screen"
           title="Next (→)"
+          data-analytics-cta="Lightbox - Next"
         >
           →
         </button>
         <span className="lb-title">{screen.name}</span>
         <span className="lb-cat">{screen.tag}</span>
-        <button className="lb-close" onClick={onClose} aria-label="Close preview (Esc)">✕</button>
+        <button className="lb-close" onClick={onClose} aria-label="Close preview (Esc)" data-analytics-cta="Lightbox - Close">✕</button>
       </div>
 
       {/* Frame */}
@@ -120,6 +122,7 @@ export default function Lightbox({ activeIdx, onClose, onNavigate }: LightboxPro
               onClick={() => onNavigate(i)}
               aria-label={`Go to screen ${i + 1}: ${ALL_SCREENS[i].name}`}
               aria-current={i === activeIdx ? 'true' : undefined}
+              data-analytics-cta={`Lightbox - Navigate ${ALL_SCREENS[i].name}`}
             />
           ))}
         </div>
@@ -132,10 +135,11 @@ export default function Lightbox({ activeIdx, onClose, onNavigate }: LightboxPro
             className={`lbf${activeIdx !== null && flagged.has(activeIdx) ? ' on' : ''}`}
             onClick={toggleFlag}
             aria-pressed={activeIdx !== null && flagged.has(activeIdx)}
+            data-analytics-cta="Lightbox - Note Screen"
           >
             {activeIdx !== null && flagged.has(activeIdx) ? '✓ Noted' : '+ Note this screen'}
           </button>
-          <a href="#feedback" className="lbf" onClick={onClose}>
+          <a href="#feedback" className="lbf" onClick={onClose} data-analytics-cta="Lightbox - Request Access">
             Request access →
           </a>
         </div>

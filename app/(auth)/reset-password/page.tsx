@@ -80,7 +80,7 @@ function ResetForm() {
 
           {error && <div className="auth-err" role="alert">{error}</div>}
 
-          <form onSubmit={submit} noValidate>
+          <form onSubmit={submit} noValidate data-analytics-label="reset-password-form">
             <div className="ff-field">
               <label className="ff-label" htmlFor="rp-pw">New password</label>
               <div className="pw-wrap">
@@ -125,7 +125,7 @@ function ResetForm() {
               />
             </div>
 
-            <button className="ff-submit" type="submit" disabled={loading || !token} aria-busy={loading}>
+            <button className="ff-submit" type="submit" disabled={loading || !token} aria-busy={loading} data-analytics-cta="ResetPasswordForm - Submit">
               {loading ? 'Updating…' : 'Update password →'}
             </button>
           </form>

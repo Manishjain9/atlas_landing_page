@@ -76,7 +76,7 @@ export default function ForgotPasswordPage() {
 
             {error && <div className="auth-err" role="alert">{error}</div>}
 
-            <form onSubmit={submit} noValidate>
+            <form onSubmit={submit} noValidate data-analytics-label="forgot-password-form">
               <div className="ff-field">
                 <label className="ff-label" htmlFor="fp-email">Email address</label>
                 <input
@@ -90,7 +90,7 @@ export default function ForgotPasswordPage() {
                   autoFocus
                 />
               </div>
-              <button className="ff-submit" type="submit" disabled={loading} aria-busy={loading}>
+              <button className="ff-submit" type="submit" disabled={loading} aria-busy={loading} data-analytics-cta="ForgotPasswordForm - Submit">
                 {loading ? 'Sending…' : 'Send reset link →'}
               </button>
             </form>

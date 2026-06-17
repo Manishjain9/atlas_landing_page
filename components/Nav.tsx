@@ -27,15 +27,15 @@ export default function Nav() {
   return (
     <>
       <nav className={`atlas-nav${scrolled ? ' scrolled' : ''}`} id="nav" aria-label="Main navigation">
-        <a href="#home" className="nav-logo" aria-label="Atlas home">
+        <a href="#home" className="nav-logo" aria-label="Atlas home" data-analytics-cta="Nav - Logo Home">
           <img src="/atlas-logo.png" alt="Atlas" style={{ height: 50, width: 'auto' }} />
         </a>
 
         <div className="nav-right">
           {navLinks.map((l) => (
-            <a key={l.href} href={l.href} className="nav-link">{l.label}</a>
+            <a key={l.href} href={l.href} className="nav-link" data-analytics-cta={`Nav - ${l.label}`}>{l.label}</a>
           ))}
-          <a href="#feedback" className="nav-cta">Become a founding partner</a>
+          <a href="#feedback" className="nav-cta" data-analytics-cta="Nav - Become Founding Partner">Become a founding partner</a>
         </div>
 
         <button
@@ -43,6 +43,7 @@ export default function Nav() {
           onClick={() => setMenuOpen((o) => !o)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
+          data-analytics-cta={menuOpen ? 'Nav - Close Mobile Menu' : 'Nav - Open Mobile Menu'}
         >
           <span /><span /><span />
         </button>
@@ -50,9 +51,9 @@ export default function Nav() {
 
       <div className={`mobile-menu${menuOpen ? ' open' : ''}`} aria-hidden={!menuOpen}>
         {navLinks.map((l) => (
-          <a key={l.href} href={l.href} className="nav-link" onClick={() => setMenuOpen(false)}>{l.label}</a>
+          <a key={l.href} href={l.href} className="nav-link" onClick={() => setMenuOpen(false)} data-analytics-cta={`Nav Mobile - ${l.label}`}>{l.label}</a>
         ))}
-        <a href="#feedback" className="nav-cta" onClick={() => setMenuOpen(false)}>Become a founding partner</a>
+        <a href="#feedback" className="nav-cta" onClick={() => setMenuOpen(false)} data-analytics-cta="Nav Mobile - Become Founding Partner">Become a founding partner</a>
       </div>
     </>
   );
