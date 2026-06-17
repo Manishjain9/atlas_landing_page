@@ -20,14 +20,14 @@ export default function Hero() {
       </p>
 
       <div className="hero-acts">
-        <a href="#preview" className="btn-p">
+        <a href="#preview" className="btn-p" data-analytics-cta="Hero - Explore Screens">
           <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" width="13" height="13" aria-hidden="true">
             <circle cx="7" cy="7" r="5.5" />
             <path d="M5.5 5l3 2-3 2V5z" fill="currentColor" />
           </svg>
           Explore 22 live screens
         </a>
-        <a href="#feedback" className="btn-g">Share your feedback →</a>
+        <a href="#feedback" className="btn-g" data-analytics-cta="Hero - Share Feedback">Share your feedback →</a>
       </div>
 
       <div className="scroll-ind" aria-hidden="true">

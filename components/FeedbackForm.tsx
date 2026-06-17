@@ -226,7 +226,7 @@ export default function FeedbackForm() {
         </div>
       </div>
 
-      <button className="ff-submit" type="submit" disabled={loading} aria-busy={loading}>
+      <button className="ff-submit" type="submit" disabled={loading} aria-busy={loading} data-analytics-cta="FeedbackForm - Submit">
         {loading ? 'Sending…' : 'Send feedback & register interest →'}
       </button>
     </form>

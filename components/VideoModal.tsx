@@ -10,8 +10,27 @@ interface VideoModalProps {
   onNavigate: (idx: number) => void;
 }
 
+async function trackEvent(type: string, label: string, value?: string) {
+  try {
+    await fetch('https://gc-analytics.mj90155.workers.dev/event', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true,
+      body: JSON.stringify({
+        type,
+        label,
+        value: value || '',
+        page: typeof window !== 'undefined' ? window.location.pathname : ''
+      })
+    });
+  } catch (e) {
+    // Silent fail for analytics
+  }
+}
+
 export default function VideoModal({ activeIdx, onClose, onNavigate }: VideoModalProps) {
   const [loading, setLoading] = useState(true);
+  const [watchStartTime, setWatchStartTime] = useState<number | null>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const isOpen = activeIdx !== null;
   const screen = activeIdx !== null ? ALL_SCREENS[activeIdx] : null;
@@ -42,6 +61,18 @@ export default function VideoModal({ activeIdx, onClose, onNavigate }: VideoModa
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
+  // Track video open and close with watch duration
+  useEffect(() => {
+    if (isOpen && screen) {
+      setWatchStartTime(Date.now());
+      trackEvent('cta_click', `VideoModal - ${screen.name}`);
+    } else if (!isOpen && watchStartTime !== null) {
+      const duration = Math.round((Date.now() - watchStartTime) / 1000);
+      trackEvent('time_on_page', 'VideoModal - Watch Duration', String(duration));
+      setWatchStartTime(null);
+    }
+  }, [isOpen, screen, watchStartTime]);
+
   // Reset loading state whenever the screen changes
   useEffect(() => { setLoading(true); }, [activeIdx]);
 
@@ -61,10 +92,10 @@ export default function VideoModal({ activeIdx, onClose, onNavigate }: VideoModa
 
       {/* Top bar */}
       <div className="vm-top">
-        <button className="vm-nbtn" onClick={prev} disabled={activeIdx === 0} aria-label="Previous" title="← Previous">
+        <button className="vm-nbtn" onClick={prev} disabled={activeIdx === 0} aria-label="Previous" title="← Previous" data-analytics-cta="VideoModal - Previous">
           ←
         </button>
-        <button className="vm-nbtn" onClick={next} disabled={activeIdx === ALL_SCREENS.length - 1} aria-label="Next" title="→ Next">
+        <button className="vm-nbtn" onClick={next} disabled={activeIdx === ALL_SCREENS.length - 1} aria-label="Next" title="→ Next" data-analytics-cta="VideoModal - Next">
           →
         </button>
 
@@ -74,7 +105,7 @@ export default function VideoModal({ activeIdx, onClose, onNavigate }: VideoModa
         </div>
 
         <span className="vm-counter">{(activeIdx ?? 0) + 1} / {ALL_SCREENS.length}</span>
-        <button className="vm-close" onClick={onClose} aria-label="Close (Esc)">✕</button>
+        <button className="vm-close" onClick={onClose} aria-label="Close (Esc)" data-analytics-cta="VideoModal - Close">✕</button>
       </div>
 
       {/* Video frame */}
@@ -125,6 +156,7 @@ export default function VideoModal({ activeIdx, onClose, onNavigate }: VideoModa
               onClick={() => onNavigate(i)}
               aria-label={`${s.name}${s.videoId ? ' (video)' : ''}`}
               title={s.name}
+              data-analytics-cta={`VideoModal - Navigate ${s.name}`}
             />
           ))}
         </div>
